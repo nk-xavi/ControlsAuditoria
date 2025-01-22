@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="#"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" ></script>
+
+    <title>Evaluación de Controles y Riesgos - NO_VFT7</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <div class="row"></div>
+        <div class="row">
+          <a class="title"><h1 class="title">Evaluación de Controles y Riesgos</h1></a>
+        </div>
+        <div class="row"></div>
+      </div>
+    </nav>
+    <div class="wrapper">
+      <div class="content" role="main">
+        <div class="row">
+          <!-- INDEX -->
+          <div class="col-3">
+            <div class="titolp">Categorías</div>
+            <div id="menu-container"></div>
+          </div>
+        <!-- TEXT -->
+        <div class="col-9">
+            <div class="position-relative mt-3 p-3 border overflow-auto" style="height: 750px; width: 900px" data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-offset="0" tabindex="0">
+                <h3 id="idcontrol">NO_VFT7</h3>
+                <h5 id="descr">Descripción del control</h5>
+                <p>Artículo 7. Trazabilidad de los registros de facturación. h)	El sistema informático deberá permitir realizar el seguimiento de la secuencia de la cadena de registros de facturación, tanto hacia delante como hacia atrás, de forma rápida, fácil e intuitiva.
+                </br>A tal efecto, al menos deberá permitir que a partir de cualquier registro de facturación existente en el sistema informático se pueda saltar al anterior (siempre que este se encuentre disponible en el sistema informático) o al posterior (excepto si el registro de partida fuera el último generado) dentro de la cadena de registros de facturación, indicando de forma clara y visible si para ese salto dado el encadenamiento de la huella o «hash» es correcto o no y si las respectivas fechas y horas de generación respetan el orden temporal entre sí y con respecto a la fecha actual del sistema.
+                </br>Adicionalmente, el sistema informático podrá ofrecer el lanzamiento, periódico o bajo demanda, de un proceso de comprobación de toda o de parte de la cadena de registros de facturación. En caso de que se trate de una comprobación parcial, se deberá permitir especificar de alguna manera qué parte de la cadena se comprobará, por ejemplo, mediante la introducción de un periodo o la indicación de un registro inicial y otro final, o la especificación de un registro de partida y, bien una fecha de finalización, bien un número de registros a comprobar hacia adelante o hacia atrás, etc.</p>
+
+                <h5 id="cumplimiento">Posible cumplimiento</h5>
+                <p>Incluir capturas de pantalla, videos, etc y explicación del cumplimiento.</p>
+
+                <h5 id="evidencia">Evidencia de cumplimiento</h5>
+                <p></p>
+                <img src="../assets/images/no_vft07_image.png" style="margin-bottom: 20px; max-width: 1000px;" alt=""/>
+
+            </div>
+          </div>
+          <!-- END TEXT -->
+        </div>
+      </div>
+    </div>
+    <script>
+      fetch('menu-lateral.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('menu-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error cargando el menú:', error));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="#"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" ></script>
+
+    <title>Evaluación de Controles y Riesgos - NO_VFT12</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <div class="row"></div>
+        <div class="row">
+          <a class="title"><h1 class="title">Evaluación de Controles y Riesgos</h1></a>
+        </div>
+        <div class="row"></div>
+      </div>
+    </nav>
+    <div class="wrapper">
+      <div class="content" role="main">
+        <div class="row">
+          <!-- INDEX -->
+          <div class="col-3">
+            <div class="titolp">Categorías</div>
+            <div id="menu-container"></div>
+          </div>
+        <!-- TEXT -->
+        <div class="col-9">
+            <div class="position-relative mt-3 p-3 border overflow-auto" style="height: 750px; width: 900px" data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-offset="0" tabindex="0">
+                <h3 id="idcontrol">NO_VFT12</h3>
+                <h5 id="descr">Descripción del control</h5>
+                <p>Artículo 9. Registro de eventos. 1.El sistema informático deberá ser capaz de detectar y registrar cuando se produzcan, al menos los siguientes eventos:
+                </br>a)	Instalación o puesta en marcha inicial del sistema informático.
+                </br>b)	Inicio del funcionamiento del sistema informático como sistema VERI*FACTU.
+                </br>c)	Fin del funcionamiento del sistema informático como sistema VERI*FACTU.
+                </br>d)	Lanzamiento del proceso de detección de anomalías en los registros de facturación.
+                </br>e)	Detección de anomalías en la integridad, inalterabilidad y trazabilidad de registros de facturación.
+                </br>f)	Lanzamiento del proceso de detección de anomalías en los registros de eventos.
+                </br>g)	Detección de anomalías en la integridad, inalterabilidad y trazabilidad de registros de eventos.
+                </br>h)	Restauración de copia de seguridad.
+                </br>i)	Exportación de registros de facturación generados en un periodo.
+                </br>j)	Exportación de registros de eventos generados en un periodo.
+                </br>2.	Adicionalmente, el sistema informático deberá generar, por cada hora que haya estado operativo y disponible para su uso, al menos un registro resumen de los eventos sucedidos desde que se generó el registro resumen de eventos anterior, o bien desde el momento de la instalación o puesta en marcha inicial del sistema si no se hubiera generado aún ningún registro resumen de eventos anterior. En caso de que en ese espacio de tiempo no se hubiera dado ningún evento de los señalados en el apartado 1 de este artículo, el registro resumen de eventos se generará igualmente y reflejará de manera adecuada dicha circunstancia, de acuerdo con lo especificado al respecto en el apartado 4 de este artículo.
+                </br>El sistema informático también deberá generar un registro resumen de eventos antes de cerrarse o apagarse.
+                </br>Este registro resumen de eventos tendrá el mismo tratamiento que los registros de eventos señalados en el apartado 1 de este artículo, por lo que puede considerarse un evento registrado más.</p>
+
+                <h5 id="cumplimiento">Posible cumplimiento</h5>
+                <p>Incluir capturas de pantalla, videos, etc y explicación del cumplimiento.</p>
+
+                <h5 id="evidencia">Evidencia de cumplimiento</h5>
+                <p></p>
+                <img src="../assets/images/no_vft12_image.png" style="margin-bottom: 20px; max-width: 1000px;" alt=""/>
+
+            </div>
+          </div>
+          <!-- END TEXT -->
+        </div>
+      </div>
+    </div>
+    <script>
+      fetch('menu-lateral.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('menu-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error cargando el menú:', error));
+    </script>
+  </body>
+</html>
