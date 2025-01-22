@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="#"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" ></script>
+
+    <title>Evaluación de Controles y Riesgos - VFT37</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <div class="row"></div>
+        <div class="row">
+          <a class="title"><h1 class="title">Evaluación de Controles y Riesgos</h1></a>
+        </div>
+        <div class="row"></div>
+      </div>
+    </nav>
+    <div class="wrapper">
+      <div class="content" role="main">
+        <div class="row">
+          <!-- INDEX -->
+          <div class="col-3">
+            <div class="titolp">Categorías</div>
+            <div id="menu-container"></div>
+          </div>
+        <!-- TEXT -->
+        <div class="col-9">
+            <div class="position-relative mt-3 p-3 border overflow-auto" style="height: 750px; width: 900px" data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-offset="0" tabindex="0">
+                <h3 id="idcontrol">VFT37</h3>
+                <h5 id="descr">Descripción del control</h5>
+                <p>La firma electrónica de los registros de facturación y de evento se basará en el estándar del Instituto Europeo de Normas de Telecomunicaciones ETSI EN 319 132 y utilizará el tipo de firma «XAdES Enveloped Signature» con los detalles técnicos que para su generación se recojan en la sede electrónica de la Agencia Estatal de Administración Tributaria.
+                </br>https://www.agenciatributaria.es/AEAT.desarrolladores/Desarrolladores/_menu_/Documentacion/Sistemas_Informaticos_de_Facturacion_y_Sistemas_VERI_FACTU/Especificaciones_tecnicas_para_generacion_de_la_firma_electronica_de_los_registros_de_facturacion/Especificaciones_tecnicas_para_generacion_de_la_firma_electronica_de_los_registros_de_facturacion.html 
+                </br>En todo caso, la firma electrónica deberá ser generada con una clave privada asociada a un certificado electrónico cualificado de firma electrónica en vigor. Dicho certificado debe haber sido emitido por un proveedor de servicios de confianza cualificado que cumpla con los requisitos establecidos en el Reglamento (UE) N.º 910/2014 del Parlamento europeo y del Consejo, de 23 de julio de 2014, y esté incluido en la lista de proveedores de confianza de la UE (EU/EEA Trusted List).
+                </br>La firma electrónica generada deberá almacenarse en el registro de facturación o de evento al que corresponde, de acuerdo con lo especificado en los artículos 9.4.c), 10.c) y 11.c).</p>
+
+                <h5 id="cumplimiento">Posible cumplimiento</h5>
+                <p>Incluir capturas de pantalla, videos, etc y explicación del cumplimiento.</p>
+
+                <h5 id="evidencia">Evidencia de cumplimiento</h5>
+                <p></p>
+                <img src="../assets/images/vft37_image.png" style="margin-bottom: 20px; max-width: 1000px;" alt=""/>
+
+            </div>
+          </div>
+          <!-- END TEXT -->
+        </div>
+      </div>
+    </div>
+    <script>
+      fetch('menu-lateral.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('menu-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error cargando el menú:', error));
+    </script>
+  </body>
+</html>
