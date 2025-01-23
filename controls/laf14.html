@@ -41,9 +41,14 @@
                 <p>Explicar y documentar los controles de seguridad que impide esta situación.</p>
 
                 <h5 id="evidencia">Evidencia de cumplimiento</h5>
-                <p></p>
-                <img src="../assets/images/laf14_image.png" style="margin-bottom: 20px; max-width: 1000px;" alt=""/>
-
+                <h6>1. Restricción de acceso por roles y privilegios:</h6>
+                <ul> <li>El acceso al SGBD está configurado de manera que únicamente los usuarios con privilegios administrativos específicos pueden ejecutar consultas directamente sobre la base de datos.</li>
+                  <li>Los usuarios finales interactúan con el sistema a través de la aplicación web, que controla y valida todas las acciones permitidas, evitando accesos directos al SGBD.</li>
+                </ul>
+                <h6>2. Limitación de operaciones masivas:</h6>                  
+                <ul><li>En el diseño del SGBD, se han configurado restricciones que limitan las consultas que pueden realizar borrados o actualizaciones masivas.</li>
+                  <li>Estas operaciones están deshabilitadas para los usuarios o están protegidas mediante procedimientos almacenados que requieren validación adicional o aprobación específica.</li>
+                </ul>
             </div>
           </div>
           <!-- END TEXT -->
