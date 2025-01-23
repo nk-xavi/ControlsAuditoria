@@ -41,9 +41,22 @@
                 <p>Explicar y documentar los controles de seguridad que impide esta situación.</p>
 
                 <h5 id="evidencia">Evidencia de cumplimiento</h5>
-                <p></p>
-                <img src="../assets/images/laf13_image.png" style="margin-bottom: 20px; max-width: 1000px;" alt=""/>
-
+                <h6>1. Arquitectura de software y separación de responsabilidades:</h6>
+                <ul> <li>El sistema está diseñado como una aplicación web que interactúa con la base de datos únicamente a través de un servidor intermedio.</li>
+                  <li>El usuario accede al sistema mediante una interfaz web utilizando credenciales específicas, lo que limita su interacción exclusivamente a las funcionalidades proporcionadas por la aplicación.</li>
+                </ul>
+                <h6>2. Aislamiento de la base de datos:</h6>                  
+                <ul><li>La base de datos está instalada en el servidor del cliente (on-premise) y no es accesible directamente desde el dispositivo del usuario final.</li>
+                  <li>El acceso a la base de datos está restringido a través de configuraciones de red y firewalls, evitando conexiones externas no autorizadas.</li>
+                </ul>
+                <h6>3. Sin acceso a archivos del software:</h6>
+                <ul><li>El usuario no tiene acceso físico ni lógico a los archivos del software, ya que estos están alojados y ejecutados directamente en el servidor.</li>
+                  <li>Esto garantiza que no puedan realizar consultas directas ni explorar configuraciones internas que pudieran comprometer la seguridad de la base de datos.</li>
+                </ul>
+                  <h6>4. Controles de autenticación y autorización:</h6>
+                <ul><li>El acceso al sistema web requiere autenticación mediante credenciales únicas que permiten identificar al usuario.</li>
+                  <li>Las acciones permitidas están restringidas a su rol y permisos definidos, evitando cualquier interacción que no esté controlada por la lógica de la aplicación.</li>
+                </ul>             
             </div>
           </div>
           <!-- END TEXT -->
