@@ -37,21 +37,25 @@
                 <p>Incluir explicación donde el partner asegure esta situación.</p>
 
                 <h5 id="evidencia">Evidencia de cumplimiento</h5>
-                <h6>1. Acceso restringido al código fuente:</h6>
-                <ul> <li>El código fuente está alojado en un sistema de control de versiones seguro con acceso restringido exclusivamente a los desarrolladores autorizados.</li>
-                  <li>Los usuarios finales no tienen acceso al código fuente ni a herramientas que puedan modificarlo, ya que el sistema está desplegado como una solución compilada y empaquetada.</li>
+               <h6>1. Acceso restringido al código fuente:</h6>
+                <ul> <li>El código fuente del sistema está gestionado a través de un sistema de control de versiones (como Git) alojado en un entorno seguro, con acceso restringido únicamente a los desarrolladores autorizados.</li>
+                  <li>Los usuarios finales no tienen acceso nivisibilidad al código fuente, ya que el sistema está desplegado como una aplicación SaaS completamente compilada y empaquetada, lo que evita manipulaciones externas.</li>
                 </ul>
-                <h6>2. Prohibición de herramientas de edición directa:</h6>                  
-                <ul><li>El sistema implementado no incluye funcionalidades ni herramientas que permitan a los usuarios finales editar o modificar el código fuente desde la interfaz o el entorno de producción.</li>
-                  <li>Esto garantiza que los usuarios no puedan realizar cambios que puedan impactar en la funcionalidad o incumplir la legislación.</li>
+                <h6>2. Prohibición de herramientas de edición directa:</h6>
+                <ul><li>La arquitectura del software no incluye funcionalidades que permitan la modificación del código fuente desde la interfaz de usuario o el entorno de producción.</li>
+                  <li>Además, las configuraciones de usuario final están diseñadas para limitarse a las opciones de personalización predefinidas, asegurando que no se puedan alterar funcionalidades críticas o vulnerar el cumplimiento normativo.</li>
                 </ul>
                 <h6>3. Cumplimiento de legislación aplicable:</h6>
-                <ul><li>El desarrollo del software sigue estándares de seguridad y buenas prácticas de desarrollo para garantizar su conformidad con las leyes y regulaciones aplicables.</li>                </ul>
-                  <h6>4. Protección del entorno de producción:</h6>
-                <ul><li>El entorno de producción está protegido contra cambios no autorizados mediante configuraciones de acceso limitado.</li>
-                  <li>Solo el equipo técnico designado puede realizar despliegues o actualizaciones, y estas acciones están controladas y documentadas.</li>
+                <ul><li>Durante el desarrollo y las actualizaciones del software, se realizan auditorías internas para verificar que las modificaciones respetan las leyes aplicables, como la Ley Antifraude (Ley 11/2021) y otros reglamentos específicos.</li>
+                  <li>Los desarrollos pasan por pruebas en entornos de simulación para evaluar su impacto en el cumplimiento normativo antes de ser implementados en producción.</li>
                 </ul>
-
+                  <h6>4. Protección del entorno de producción:</h6>
+                <ul><li>El entorno de producción está configurado con accesos altamente restringidos, permitiendo únicamente al equipo técnico autorizado realizar actualizaciones o cambios en el sistema.</li>
+                </ul>
+                <h6>5. Mecanismos de verificación de integridad:</h6>
+                <ul><li>Se implementan controles automáticos para verificar la integridad del software en el entorno de producción, asegurando que no existan modificaciones no autorizadas.</li>
+                  <li>En caso de detectar discrepancias con el código fuente original, se activa un protocolo de revisión y restauración.</li>
+                </ul>
             </div>
           </div>
           <!-- END TEXT -->
