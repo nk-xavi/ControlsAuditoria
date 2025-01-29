@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="#"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" ></script>
+
+    <title>LAF25 - Evaluación de Controles y Riesgos</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid justify-content-center">
+          <a class="title"><h1 class="title">Evaluación de Controles y Riesgos</h1></a>
+      </div>
+    </nav>
+    <div class="wrapper">
+      <div class="content" role="main">
+        <div class="row mt-5">
+          <!-- INDEX -->
+          <div class="col-2">
+            <div class="titolp">Categorías</div>
+            <div id="menu-container"></div>
+          </div>
+        <!-- TEXT -->
+        <div class="col-10 mb-5">
+            <div class="position-relative mt-3 p-3 border overflow-auto" style="height: 850px; width: 1200px" data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-offset="0" tabindex="0">
+                <h3 id="idcontrol">LAF25</h3>
+                <h5 id="descr">Descripción del control</h5>
+                <p>El sistema permite crear facturas con fecha anterior. Aunque no parece existir nada concreto que prohiba esta situación podría estar comprendido dentro del apartado c) del 201 . bis de la LGT relativo a "reflejar transacciones distintas". Considerando que son infracciones graves, existe riesgo de considerarse una infracción tributaria sancionable por dicho artículo.</p>
+                </br>
+                <h5 id="evidencia">Evidencia de cumplimiento</h5>
+                <p>Como se muestra en la imagen, el sistema permite crear una factura con fecha anterior.</p>
+                <img src="../assets/images/laf25_image.png" style="margin-bottom: 20px; max-width: 1000px;" alt=""/>
+            </div>
+          </div>
+          <!-- END TEXT -->
+        </div>
+      </div>
+    </div>
+    <script>
+      fetch('menu-lateral.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('menu-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error cargando el menú:', error));
+    </script>
+  </body>
+</html>

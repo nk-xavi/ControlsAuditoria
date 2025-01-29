@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="#"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" ></script>
+
+    <title>LAF14 - Evaluación de Controles y Riesgos</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid justify-content-center">
+          <a class="title"><h1 class="title">Evaluación de Controles y Riesgos</h1></a>
+      </div>
+    </nav>
+    <div class="wrapper">
+      <div class="content" role="main">
+        <div class="row mt-5">
+          <!-- INDEX -->
+          <div class="col-2">
+            <div class="titolp">Categorías</div>
+            <div id="menu-container"></div>
+          </div>
+        <!-- TEXT -->
+        <div class="col-10 mb-5">
+            <div class="position-relative mt-3 p-3 border overflow-auto" style="height: 850px; width: 1200px" data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-offset="0" tabindex="0">
+                <h3 id="idcontrol">LAF14</h3>
+                <h5 id="descr">Descripción del control</h5>
+                <p>El SGBD tiene limitaciones de acceso y no se puede realizar borrados o actualizaciones masivas.</p>
+                </br>
+                <h5 id="evidencia">Evidencia de cumplimiento</h5>
+                <h6>1. Restricción de acceso por roles y privilegios:</h6>
+                <ul> <li>El acceso directo al Sistema de Gestión de Bases de Datos (SGBD) está limitado exclusivamente al equipo técnico autorizado.</li>
+                  <li>Los usuarios finales no tienen acceso directo al SGBD; todas las interacciones se realizan a través de la capa aplicación web, que controla y valida las acciones permitidas según los roles y permisos asignados.</li>
+                  <li>Los privilegios administrativos están segmentados y se auditan regularmente para garantizar que no existan accesos innecesarios o permisos mal configurados.</li>
+                </ul>
+                <h6>2. Validación y limitación de operaciones masivas:</h6>
+                <ul><li>El diseño del SGBD incluye restricciones que previenen la ejecución de consultas que puedan realizar borrados o actualizaciones masivas sin una validación previa.</li>
+                  <li>Este tipo de operaciones (si son necesarias para tareas de mantenimiento o soporte) están protegidas mediante procedimientos almacenados que requieren parámetros específicos verificaciones adicionales.</li>
+                  <li>En la interfaz de administración de la base de datos, se han implementado capas de seguridad que solicitan autorizaciones explícitas antes de realizar cualquier operación de alto impacto.</li>
+                </ul>
+                <h6>3. Registro de auditoría</h6>
+                <ul><li>Todas las acciones que impliquen modificaciones en la base de datos, incluso a nivel de la aplicación, se registran en un sistema de auditoría. Esto incluye el detalle de qué usuario realizó la acción, cuándo se realizó y el impacto generado.</li>
+                  <li>Este registro asegura la trazabilidad completa de las operaciones y facilita identificar cualquier actividad no autorizada.</li>
+                </ul>
+                <h6>4. Prevención desde la interfaz del sistema:</h6>
+                <ul><li>Las funcionalidades del sistema están diseñadas para operar sobre registros individuales o lotes controlados, evitando que los usuarios puedan ejecutar manipulaciones masivas que excedan los límites establecidos.</li>
+                  <li>Las operaciones sensibles, como eliminar múltiples registros, requieren confirmaciones explícitas y permisos especiales configurados previamente.</li>
+                </ul>
+            </div>
+          </div>
+          <!-- END TEXT -->
+        </div>
+      </div>
+    </div>
+    <script>
+      fetch('menu-lateral.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('menu-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error cargando el menú:', error));
+    </script>
+  </body>
+</html>
